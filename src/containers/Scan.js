@@ -35,7 +35,7 @@ const Scan = () => {
 
     const onReading = (event) => {
         window.alert(event)
-        window.alert(alert.toString())
+        window.alert(event.toString())
         window.alert(JSON.stringify(event))
         const {message, serialNumber} = alert
         setSerialNumber(serialNumber);
