@@ -28,7 +28,7 @@ const Scan = () => {
                     ndef.onreading = ({serialNumber, message}) => {
                         console.log("NDEF message read."); 
                         window.alert(JSON.stringify(serialNumber)) 
-                        window.alert(JSON.stringify(message)) 
+                        window.alert(JSON.stringify(message.records[0])) 
                         onReading({message,serialNumber});
                         setActions({
                             scan: 'scanned',
