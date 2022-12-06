@@ -13,7 +13,7 @@ const Scan = () => {
             try {
                 
                 const ndef = new window.NDEFReader();
-                ndef
+                await ndef
                 .scan()
                 .then((data) => {
                     window.alert(data)
@@ -29,6 +29,10 @@ const Scan = () => {
                         console.log("NDEF message read."); 
                         window.alert(JSON.stringify(event))
                         onReading(event);
+                        setActions({
+                            scan: 'scanned',
+                            write: null
+                        });
                     };
                 })
                 .catch((error) => {
