@@ -15,20 +15,17 @@ const Scan = () => {
                 const ndef = new window.NDEFReader();
                 await ndef
                 .scan()
-                .then((data) => {
-                    window.alert(data)
-                    window.alert(JSON.stringify(data))
-
+                .then((data) => { 
                     console.log("Scan started successfully.");
                     ndef.onreadingerror = (event) => {
                     console.log(
                         "Error! Cannot read data from the NFC tag. Try a different one?"
                     );
                     };
-                    ndef.onreading = ({serialNumber, message}) => {
+                    ndef.onreading = ({serialNumber, message,payload, cachedMessage}) => {
                         console.log("NDEF message read."); 
                         window.alert(JSON.stringify(serialNumber)) 
-                        window.alert(JSON.stringify(message.records[0])) 
+                        window.alert(JSON.stringify(cachedMessage)) 
                         onReading({message,serialNumber});
                         setActions({
                             scan: 'scanned',
