@@ -18,8 +18,7 @@ const Scan = () => {
                 ndef.onreadingerror = () => {
                     console.log("Cannot read data from the NFC tag. Try another one?");
                 };
-                ndef.onreading = event => {
-                    window.alert(JSON.stringify(event))
+                ndef.onreading = event => { 
                     console.log("NDEF message read.");
                     onReading(event);
                     setActions({
@@ -34,7 +33,8 @@ const Scan = () => {
         }
     },[setActions]);
 
-    const onReading = ({message, serialNumber}) => {
+    const onReading = ({message, serialNumber},event) => {
+        window.alert(event)
         setSerialNumber(serialNumber);
         for (const record of message.records) {
             switch (record.recordType) {
