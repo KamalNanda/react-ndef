@@ -35,9 +35,10 @@ const Scan = () => {
 
     const onReading = (event) => {
         window.alert(event)
-        window.alert(event.toString())
-        window.alert(JSON.stringify(event))
-        const {message, serialNumber} = alert
+        const {message, serialNumber, payload} = event
+        window.alert(payload)
+        window.alert(JSON.stringify(payload))
+        window.alert(payload?.toString())
         setSerialNumber(serialNumber);
         for (const record of message.records) {
             switch (record.recordType) {
