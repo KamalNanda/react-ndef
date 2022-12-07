@@ -1,4 +1,4 @@
-import nfc from './nfc.svg';
+import nfc from './logo.png';
 import './App.css';
 import Scan from './containers/Scan';
 import Write from './containers/Write';
@@ -18,8 +18,10 @@ function App() {
 
   return (
       <div className="App">
-        <img src={nfc} className="App-logo" alt="logo" />
-        <h1>NFC Tool</h1>
+        <div className='App-header'>
+          <img src={nfc} className="App-logo" alt="logo" />
+          <h1>Robot NFC Tool</h1>
+        </div>
         <div className="App-container">
           <button onClick={()=>onHandleAction({scan: 'scanning', write: null})} className="btn">Scan</button>
           <button onClick={()=>onHandleAction({scan: null, write: 'writing'})} className="btn">Write</button>

@@ -1,10 +1,28 @@
 .App {
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
+  flex-direction: column; 
+  background-color: rgb(221, 221, 221);
+  height: 100vh;  
+}
+.App-header{
+  display: flex;
   flex-direction: column;
-  padding: 24px;
+  align-items: center; 
+  margin: 100px 0;
+}
+.write-form{
+  width: 30%;
+  margin: 0 auto;
+}
+
+@media (max-width: 786px) {
+  .write-form{
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 
 .App-container {
