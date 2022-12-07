@@ -17,8 +17,14 @@ const Writer = ({writeFn}) => {
     }
     const onSave = (e) => {
         e.preventDefault();
+        console.log(JSON.stringify(input))
         writeFn(JSON.stringify(input));
-        setInput('');
+        setInput({
+            ssid: '',
+            password: '',
+            ip: '',
+            gateway: ''
+        });
     };
     const inputArr = [
         {
